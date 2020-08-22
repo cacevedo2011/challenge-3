@@ -42,9 +42,9 @@ At the end of all the options that the user chooses, the code stores it and I to
 
 This is the code,
 
-  // Start random selection variables:
+    // Start random selection variables:
 
-  for (var i = 0; i < enter; i++) {
+    for (var i = 0; i < enter; i++) {
 
     var pickChoices = choices[Math.floor(Math.random() * choices.length)];
 
