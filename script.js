@@ -6,27 +6,28 @@ var confirmCharacter;
 var confirmUppercase;
 var confirmLowercase;
 
-// Start Password variable values: 
+// Start Password variable values:
+
+//Special Characters
 character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 
-//
+//Numbers Charaters
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-//
+//Letters Characters
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 
-// Space is for the Uppercase conversion
 space = [];
 
-// Choices declared outside the if statement so they can be concatenated upon condition
+//Choices declared outside the if statement
 var choices;
 
-// converts letters to uppercase 
+//Converts letters to uppercase 
 var toUpper = function (x) {
   return x.toUpperCase();
 };
-// creates a variable for uppercase conversion
+//To create a variable for uppercase conversion
 letters2 = letters.map(toUpper);
 
 var get = document.querySelector("#generate");
@@ -36,22 +37,23 @@ get.addEventListener("click", function () {
   document.getElementById("password").placeholder = generatePassword;
 });
 
-// Start function to generate password
+//Start function to generate password
 function generatePassword() {
     //Welcomes User to the Password Generator
     window.alert("Welcome to Password Generator")
   
-    // Asks for user input
+    //Asks for user input
     enter = parseInt(prompt("Lets start with how long would you like your password to be? It has to be between 8 and 128"));
-    // First if statement for user validation 
+
+    //First if statement for user validation 
     if (!enter) {
         alert("This needs a value");
     } else if (enter < 8 || enter > 128) {
         enter = parseInt(prompt("You must choose between 8 and 128"));
 
     } else {
-        // Continues once user input is validated
 
+        //Continues User the rest of the questions
         confirmNumber = confirm("In this password would you like to have any special characters?");
 
         confirmCharacter = confirm("Do you want this password to contain numbers?");
@@ -60,7 +62,9 @@ function generatePassword() {
 
         confirmLowercase = confirm("Lastly, would you like your password to contain uppercase letters?");
 
-        window.alert("Here is your random password, have a great day!");
+        //This is to recreate that it generated the password, even though it doesn't need to make the code work, more cosmetic enhancements
+        window.alert("Here is your random password, please press enter to see password have a great day!");
+
     };
 
     //If the User doesn't choose any of the options
@@ -128,19 +132,17 @@ function generatePassword() {
   var password = [];
 
   // Start random selection variables:
-  // Random selection for all variables: 
   for (var i = 0; i < enter; i++) {
     var pickChoices = choices[Math.floor(Math.random() * choices.length)];
     password.push(pickChoices);
     console.log = generatePassword
 }
-// This joins the password array and converts it to a string
+//This joins the password array and converts it to a string
 var generatingPassword = password.join("");
 UserInput(generatingPassword);
 return generatingPassword;
 }
-// This puts the password value into the textbox
-// Changed function input to use textcontent
+//This puts the password value into the textbox
 function UserInput(generatingPassword) {
 document.getElementById("password").textContent = generatingPassword;
 
