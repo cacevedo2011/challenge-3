@@ -10,7 +10,7 @@ var confirmLowercase;
 character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 
 //
-number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 //
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -70,15 +70,15 @@ function generatePassword() {
     }
     //If the User chooses 4 options
     else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
-        choices = character.concat(number, letters, letters2);
+        choices = character.concat(numbers, letters, letters2);
     }
 
     //If the User chooses 3 options
     else if (confirmCharacter && confirmNumber && confirmUppercase) {
-        choices = character.concat(number, letters2);
+        choices = character.concat(numbers, letters2);
     }
     else if (confirmCharacter && confirmNumber && confirmLowercase) {
-        choices = character.concat(number, letters);
+        choices = character.concat(numbers, letters);
     }
     else if (confirmCharacter && confirmLowercase && confirmUppercase) {
         choices = character.concat(letters, letters2);
@@ -89,7 +89,7 @@ function generatePassword() {
 
     //If the User chooses 2 options 
     else if (confirmCharacter && confirmNumber) {
-        choices = character.concat(number);
+        choices = character.concat(numbers);
 
     } else if (confirmCharacter && confirmLowercase) {
         choices = character.concat(letters);
@@ -100,13 +100,13 @@ function generatePassword() {
 
     //If the User chooses 1 option
     else if (confirmLowercase && confirmNumber) {
-        choices = alpha.concat(number);
+        choices = letters.concat(numbers);
 
   } else if (confirmLowercase && confirmUppercase) {
-        choices = alpha.concat(letters2);
+        choices = letters.concat(letters2);
 
   } else if (confirmNumber && confirmUppercase) {
-        choices = number.concat(letters2);
+        choices = numbers.concat(letters2);
   }
 
   // Else if for 1 positive option
@@ -114,7 +114,7 @@ function generatePassword() {
       choices = character;
   }
   else if (confirmNumber) {
-      choices = number;
+      choices = numbers;
   }
   else if (confirmLowercase) {
       choices = letters;
