@@ -20,7 +20,7 @@ The first thing I encounter is that the button is not working when you pressed t
 
 For instance, 
 
-enter = parseInt(prompt("Lets start with how long would you like your password to be? It has to be between 8 and 128"));
+    enter = parseInt(prompt("Lets start with how long would you like your password to be? It has to be between 8 and 128"));
 
     // First if statement for user validation
 
