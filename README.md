@@ -1,4 +1,4 @@
-# challenge-3
+# Password Generator
 
 ### Deployed Website
 
